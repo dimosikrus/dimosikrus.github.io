@@ -103,7 +103,74 @@ function animeinator(idd, count, url, img, hsl, text1, text2, subs) {
         document.getElementById(idd).innerHTML += block;
         episode_count++;
     }
-
+};
+animeinator('oshinoko', 11,
+    'https://torr.turuturuone.xyz/stream/OSHI_NO_KO_%5B01%5D_%5BAniLibria_TV%5D_%5BWEBRip_1080p_HEVC%5D.mkv?link=d1b97ff02439bcf415d8dac3794874b51966d2e1&index=',
+    '/img/oshi.jpg',
+    190,
+    'Oshi no ko (Звёздное дитя) [1080p HEVC] [Anilibria.tv]', 
+    'Oshi no ko',
+    ''
+);
+animeinator('spyx', 25,
+    'https://torr.turuturuone.xyz/stream/%5BTrix%5D%20Spy%20x%20Family%20-%20S01E01%20(BD%20AV1%201080p)%5BDual%20Audio%5D%5BMulti%20Subs%5D.mkv?link=00c15a34fcd07466537b216adf9799081c75e614&index=',
+    '/img/spyx.png',
+    133,
+    'Spy X Family', 
+    'Spy X Family',
+    ''
+);
+animeinator('bubble', 1,
+    'https://torr.turuturuone.xyz/stream/%5BTrix%5D%20Bubble%20(2022)%20-%20(BD%201080p%20AV1%20Opus)%20%5BMulti%20Subs%5D%20%5B36AB16C6%5D.mkv?link=6185ced17a0331d82864b4fe635750039a062a54&index=',
+    '/img/bubble.jpg',
+    262,
+    'Bubble. 2022. 1080p',
+    'Bubble',
+    ''
+);
+animeinator('jiga', 13,
+    'https://torr.turuturuone.xyz/stream/%5BSokudo%5D%20Jigokuraku%20-%2001%20%5B1080p%5D%5BAV1%5D%5Bmultisub%5D%5Bdual%20audio%5D.mkv?link=59ead6d2d10cbb53d96d9862ccc6af7c9cc9bdfd&index=',
+    '/img/jiga.jpg',
+    340,
+    '[Sokudo] [AV1] Jigokuraku. 1080p',
+    'Jigokuraku',
+    ''
+);
+animeinator('yaiba', 11,
+    'https://torr.turuturuone.xyz/stream/%5BTrix%5D%20Kimetsu%20no%20Yaiba%20-%20Katanakaji%20no%20Sato%20Hen%20-%2001%20-%20(720p%20AV1%20AAC)%5BMulti%20Subs%5D.mkv?link=cd333bc6ffa2f9b8dac7051b482594b40658a082&index=',
+    '/img/yaiba.jpg',
+    375,
+    'Kimetsu no Yaiba - Katanakaji no Sato Hen. 720p',
+    'Kimetsu no Yaiba',
+    ''
+);
+animeinator('slime', 1,
+    'https://torr.turuturuone.xyz/stream/%5BTrix%5D%20Tensei%20Shitara%20Slime%20Datta%20Ken%20Movie%20Scarlet%20Bond%20(WEB%201080p%20AV1).mkv?link=908f5d3bca02ab1bfe70406c029a79e9c9787547&index=',
+    '/img/slimedata.jpg',
+    406,
+    'Tensei Shitara Slime Datta Ken Movie Scarlet Bond. 1080p',
+    'Slime 300 Movie',
+    './subs/sd_ru.vtt'
+);
+animeinator('yamada', 13,
+    'https://torr.turuturuone.xyz/stream/%5BTrix%5D%20Yamada-kun%20to%20Lv999%20no%20Koi%20o%20Suru%20-%2001%20(WEB%201080p%20AV1).mkv?link=795a2e161e6646b943572c9522d5b2180e9959bb&index=',
+    '/img/yamada.jpg',
+    451,
+    'Yamada-kun to Lv999 no Koi o Suru - WEB AV1',
+    'Yamada-kun to Lv999 no Koi o Suru',
+    ''
+);
+animeinator('lain', 13,
+    'https://torr.turuturuone.xyz/stream/Serial_Experiments_Lain_01_BDRip_hi10p_1080p.mkv?link=8ead87407e744c977b7090b3041df4cfc7763f00&index=',
+    '/img/lain.jpg',
+    170,
+    'Serial Experiments Lain',
+    'Serial Experiments Lain',
+    ''
+);
+</script>
+<script defer>
+function animepreinator(idd, count, url, img, hsl, text1, text2, subs) {
     for(let i = 1;i <= count;i++) {
         document.getElementById(idd + i).addEventListener('click', function() {
             window.animecode = idd + i;
@@ -115,78 +182,70 @@ function animeinator(idd, count, url, img, hsl, text1, text2, subs) {
         });
     };
 };
-function a1() {
-animeinator('oshinoko', 11,
+animepreinator('oshinoko', 11,
     'https://torr.turuturuone.xyz/stream/OSHI_NO_KO_%5B01%5D_%5BAniLibria_TV%5D_%5BWEBRip_1080p_HEVC%5D.mkv?link=d1b97ff02439bcf415d8dac3794874b51966d2e1&index=',
     '/img/oshi.jpg',
     190,
     'Oshi no ko (Звёздное дитя) [1080p HEVC] [Anilibria.tv]', 
     'Oshi no ko',
     ''
-);};
-function a2() {
-animeinator('spyx', 25,
+);
+animepreinator('spyx', 25,
     'https://torr.turuturuone.xyz/stream/%5BTrix%5D%20Spy%20x%20Family%20-%20S01E01%20(BD%20AV1%201080p)%5BDual%20Audio%5D%5BMulti%20Subs%5D.mkv?link=00c15a34fcd07466537b216adf9799081c75e614&index=',
     '/img/spyx.png',
     133,
     'Spy X Family', 
     'Spy X Family',
     ''
-);};
-function a3() {
-animeinator('bubble', 1,
+);
+animepreinator('bubble', 1,
     'https://torr.turuturuone.xyz/stream/%5BTrix%5D%20Bubble%20(2022)%20-%20(BD%201080p%20AV1%20Opus)%20%5BMulti%20Subs%5D%20%5B36AB16C6%5D.mkv?link=6185ced17a0331d82864b4fe635750039a062a54&index=',
     '/img/bubble.jpg',
     262,
     'Bubble. 2022. 1080p',
     'Bubble',
     ''
-);};
-function a4() {
-animeinator('jiga', 13,
+);
+animepreinator('jiga', 13,
     'https://torr.turuturuone.xyz/stream/%5BSokudo%5D%20Jigokuraku%20-%2001%20%5B1080p%5D%5BAV1%5D%5Bmultisub%5D%5Bdual%20audio%5D.mkv?link=59ead6d2d10cbb53d96d9862ccc6af7c9cc9bdfd&index=',
     '/img/jiga.jpg',
     340,
     '[Sokudo] [AV1] Jigokuraku. 1080p',
     'Jigokuraku',
     ''
-);};
-function a5() {
-animeinator('yaiba', 11,
+);
+animepreinator('yaiba', 11,
     'https://torr.turuturuone.xyz/stream/%5BTrix%5D%20Kimetsu%20no%20Yaiba%20-%20Katanakaji%20no%20Sato%20Hen%20-%2001%20-%20(720p%20AV1%20AAC)%5BMulti%20Subs%5D.mkv?link=cd333bc6ffa2f9b8dac7051b482594b40658a082&index=',
     '/img/yaiba.jpg',
     375,
     'Kimetsu no Yaiba - Katanakaji no Sato Hen. 720p',
     'Kimetsu no Yaiba',
     ''
-);};
-function a6() {
-animeinator('slime', 1,
+);
+animepreinator('slime', 1,
     'https://torr.turuturuone.xyz/stream/%5BTrix%5D%20Tensei%20Shitara%20Slime%20Datta%20Ken%20Movie%20Scarlet%20Bond%20(WEB%201080p%20AV1).mkv?link=908f5d3bca02ab1bfe70406c029a79e9c9787547&index=',
     '/img/slimedata.jpg',
     406,
     'Tensei Shitara Slime Datta Ken Movie Scarlet Bond. 1080p',
     'Slime 300 Movie',
     './subs/sd_ru.vtt'
-);};
-function a7() {
-animeinator('yamada', 13,
+);
+animepreinator('yamada', 13,
     'https://torr.turuturuone.xyz/stream/%5BTrix%5D%20Yamada-kun%20to%20Lv999%20no%20Koi%20o%20Suru%20-%2001%20(WEB%201080p%20AV1).mkv?link=795a2e161e6646b943572c9522d5b2180e9959bb&index=',
     '/img/yamada.jpg',
     451,
     'Yamada-kun to Lv999 no Koi o Suru - WEB AV1',
     'Yamada-kun to Lv999 no Koi o Suru',
     ''
-);};
-function a8(){
-animeinator('lain', 13,
+);
+animepreinator('lain', 13,
     'https://torr.turuturuone.xyz/stream/Serial_Experiments_Lain_01_BDRip_hi10p_1080p.mkv?link=8ead87407e744c977b7090b3041df4cfc7763f00&index=',
     '/img/lain.jpg',
     170,
     'Serial Experiments Lain',
     'Serial Experiments Lain',
     ''
-);};
+);
 </script>
 <!--Save/Load Script-->
 <script>
