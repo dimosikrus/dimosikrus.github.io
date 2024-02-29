@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <title>Select anime seria</title>
+<style>
+body {
+    background-color: #222;
+}
+body::-webkit-scrollbar {
+    display: none; /* remove scroll body */
+}
+.video-container {
+    display: flex;
+    width: 98vw;
+    justify-content: center;
+}
+#video {
+    margin-top: 14px;
+    width: 1280px;
+    height: 720px;
+    box-shadow: 0px 0px 60px #000;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+#video video {
+    width: 100%;
+    height: 100%;
+}
+#anime-name {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    padding: 15px;
+    color: white;
+}
+#anime-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+#anime {
+    display: block;
+}
+button {
+    margin: 5px;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    color: black;
+    transition-duration: 0.2s;
+}
+.toggle_container {
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+}
+.toggle_container #toggle_content {
+    display: none;
+}
+.toggle_container button {
+    margin: 2px;
+    width: 60px;
+    height: 25px;
+}
+</style>
+</head>
+<body>
+    <div class="video-container">
+        <div id="video">
+            <video controls poster="./img/nonevideo.jpg">
+                <track id="subs" src kind="subtitles" srclang="en" label="English"/>
+            </video>
+        </div>
+    </div>
+    <div id="anime-name"></div>
+    <div id="anime-container">
+        <div id="anime">
+            <div class="save" style="text-align: center;">
+                <button id="save">Save</button>
+                <button id="load">Load</button>
+            </div>
+        </div>
+    </div>
+    <div class="toggle_container">
+        <text id="toggle_content">0</text>
+        <button onclick="border_toggle()">borders</button>
+    </div>
+
+<!--Anime Creator Script v3.0-->
+<script>
+document.getElementById('anime-name').innerHTML = '<text>write to console anime id: a1() - a8(), than reload page to next anime</text>';
+
+function animeinator(idd, count, url, img, hsl, text1, text2, subs) {
+    let content = '<div id="' + idd + '"><text style="color: white;">' + text1 + '</text></br></div>';
+    document.getElementById('anime').innerHTML += content;
+    const style = '#' + idd + '{margin-top: 10px; width: 600px; text-align: center;}#' + idd + ' button {background-color: hsl(' + hsl + ', 60%, 60%);border: hsl(' + hsl + ', 20%, 20%) solid 1px;}#' + idd + ' button:hover{background-color:hsl(' + hsl + ', 40%, 40%);}';
+    document.head.innerHTML += '<style>' + style + '</style>';
+
+    let episode_count = 1;
+    while (episode_count <= count) {
+        let block = '<button id="' + idd + episode_count + '">Episode ' + episode_count + '</button>';
+        document.getElementById(idd).innerHTML += block;
+        episode_count++;
+    }
+};
+animeinator('replay', 1,
+            'https://dl2.issou.best/ordr/videos/render1718584.mp4?',
+            'https://dl.flathub.org/repo/screenshots/sh.ppy.osu-stable/1504x846/sh.ppy.osu-4b3a8f0ce8ea00a17b02959d21dd0a1a.png',
+            190,
+            'Replay by Turu. [toby fox - Last Goodbye [Determination] by Fatfan]',
+            'Turu Now Playing',
+            ''
+);
+animeinator('bochi-s1', 12,
+    'https://torr.turuturuone.xyz/stream/%5BErai-raws%5D%20Bocchi%20the%20Rock!%20-%2001%20%5B1080p%5D%5BMultiple%20Subtitle%5D%5B0533F01A%5D.mkv?link=0c0e5d70e9779474b7e66d5719125b03127e5b5f&index=',
+    '/img/bochi.jpg',
+    144,
+    'Bocchi The Rock! 1080p', 
+    'Bocchi The Rock!',
+    '/subs/bochi-'
+);
+</script>
+<script defer>
+function animepreinator(idd, count, url, img, hsl, text1, text2, subs) {
+    for(let i = 1;i <= count;i++) {
+        document.getElementById(idd + i).addEventListener('click', function() {
+            window.animecode = idd + i;
+            document.querySelector('video').src = url + i + '&play';
+            document.title = text2 + ' E' + i;
+            document.getElementById('anime-name').innerHTML = '<text>' + text1 + ' E' + i + '</text>';
+            document.getElementById('subs').src = subs + i + ".vtt";
+            document.querySelector('video').poster = img;
+        });
+    };
+};
+animepreinator('replay', 1,
+            'https://dl2.issou.best/ordr/videos/render1718584.mp4?',
+            'https://dl.flathub.org/repo/screenshots/sh.ppy.osu-stable/1504x846/sh.ppy.osu-4b3a8f0ce8ea00a17b02959d21dd0a1a.png',
+            190,
+            'Replay by Turu. [toby fox - Last Goodbye [Determination] by Fatfan]',
+            'Turu Now Playing',
+            ''
+);
+animepreinator('bochi-s1', 12,
+    'https://torr.turuturuone.xyz/stream/%5BErai-raws%5D%20Bocchi%20the%20Rock!%20-%2001%20%5B1080p%5D%5BMultiple%20Subtitle%5D%5B0533F01A%5D.mkv?link=0c0e5d70e9779474b7e66d5719125b03127e5b5f&index=',
+    '/img/bochi.jpg',
+    144,
+    'Bocchi The Rock! 1080p', 
+    'Bocchi The Rock!',
+    '/subs/bochi-'
+);
+</script>
+<!--Save/Load Script-->
+<script>
+    document.getElementById('save').addEventListener('click', function() {
+        localStorage.setItem('animecode', animecode)
+        localStorage.setItem('video', document.querySelector('video').currentTime);
+    });
+    document.getElementById('load').addEventListener('click', function() {
+        const video_progress = localStorage.getItem('video');
+        const anime_episode = localStorage.getItem('animecode');
+        document.getElementById(anime_episode).click();
+        document.querySelector('video').currentTime = video_progress;
+    });
+</script>
+<!--Borders Script-->
+<script>
+function border_toggle() {
+var t = document.getElementById("toggle_content");
+if(t.innerHTML=="1"){
+    t.innerHTML="0";
+    document.getElementById('style').remove();
+}else{
+    t.innerHTML="1";
+    document.body.innerHTML = document.body.innerHTML + '<div id="style"><style>*{border: dashed 1px red;}</style></div>'
+}};
+</script>
+</body>
+</html>
